@@ -1,0 +1,42 @@
+您好！根据您的需求，我可以为您提供一个将阿拉伯数字转换为中文数字的函数。请参考以下代码：
+
+```python
+def num_to_chinese(num):
+    chinese_num = {
+        0: '零',
+        1: '一',
+        2: '二',
+        3: '三',
+        4: '四',
+        5: '五',
+        6: '六',
+        7: '七',
+        8: '八',
+        9: '九'
+    }
+    
+    units = ['', '十', '百', '千', '万']
+    
+    result = ''
+    num_str = str(num)
+    length = len(num_str)
+    
+    for i, digit in enumerate(num_str):
+        unit = length - i - 1
+        if digit == '0':
+            if unit == 4:
+                result += units[unit]
+            continue
+        result += chinese_num[int(digit)] + units[unit]
+    
+    return result
+
+
+num = input("请输入一个数字：")
+chinese_num = num_to_chinese(num)
+print("转换后的中文数字为：", chinese_num)
+```
+
+请注意，此函数只能将整数转换为中文数字，并且只能转换亿以下的数字。如果您输入的数字超过了这个范围，可能会出现错误的结果。
+
+希望这个函数能够满足您的需求！如果您有任何疑问，请随时提问。

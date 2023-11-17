@@ -1,0 +1,151 @@
+你好
+编写生产者和消费者程序，要求：
+生产者和消费者两个程序，共用一个仓库，仓库是一个普通文件（/tmp/store），容量为100个字节；
+生产者生产资源放进仓库，消费者则从仓库中消费资源；资源为数字字符“1、2、3、4、5、6、7、8、9、0”，一个资源就是一个数字，10个数字循环生成；
+生产者创建仓库（/tmp/store），间隔1s生产一个资源，当仓库满了（资源数量达到100个）的时候，生产者不能继续生产；消费者间隔2s消费一个资源，当仓库为空的时候，消费者不能继续消费；
+消费者每次消费1个资源，首先打印出消耗之前仓库中的资源数量和空位的数量，然后打印出消耗之后仓库中的资源数量和空位的数量，并打印出所消耗的资源内容；
+生产者每次生产1个资源，先打印出生产之前仓库中的资源数量和空位的数量，然后打印出生产之后仓库中的资源数量和空位的数量，并打印出所生产的资源内容。
+消费者消费资源后需要把已经消费的资源从仓库里删除；
+用信号量实现进程的同步和互斥。
+semget、semctl函数、semop函数的使用。
+【提示】题目有多种解决方案，可以用1个或多个信号量，或者使用其他合适的方法。
+你好！根据您的描述，您需要编写一个生产者和消费者程序，并使用信号量实现进程的同步和互斥。以下是一个可能的解决方案：
+
+生产者程序（producer.c）：
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define STORE_FILE "/tmp/store"
+#define BUFFER_SIZE 100
+
+struct sembuf producer_start = {0, -1, SEM_UNDO};
+struct sembuf producer_end = {0, 1, SEM_UNDO};
+struct sembuf consumer_start = {1, -1, SEM_UNDO};
+struct sembuf consumer_end = {1, 1, SEM_UNDO};
+
+int main() {
+    int semid;
+    int store_fd;
+    char buffer[BUFFER_SIZE];
+    char resource[] = "0123456789";
+    int resource_index = 0;
+
+    // 创建或访问信号量
+    semid = semget(IPC_PRIVATE, 2, IPC_CREAT | IPC_EXCL | 0666);
+    if (semid == -1) {
+        perror("semget");
+        exit(EXIT_FAILURE);
+    }
+
+    // 初始化信号量
+    semctl(semid, 0, SETVAL, 1);
+    semctl(semid, 1, SETVAL, 0);
+
+    // 创建或清空仓库文件
+    store_fd = open(STORE_FILE, O_CREAT | O_TRUNC | O_WRONLY, 0644);
+    if (store_fd == -1) {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+    close(store_fd);
+
+    while (1) {
+        // 请求信号量
+        if (semop(semid, &producer_start, 1) == -1) {
+            perror("semop");
+            exit(EXIT_FAILURE);
+        }
+
+        // 读取仓库文件并打印资源数量和空位数量
+        store_fd = open(STORE_FILE, O_RDONLY);
+        if (store_fd == -1) {
+            perror("open");
+            exit(EXIT_FAILURE);
+        }
+        read(store_fd, buffer, BUFFER_SIZE);
+        close(store_fd);
+        printf("Before production: Resources: %ld, Empty slots: %ld\n", strlen(buffer), BUFFER_SIZE - strlen(buffer));
+
+        // 生产资源并将其写入仓库文件
+        store_fd = open(STORE_FILE, O_WRONLY | O_APPEND);
+        if (store_fd == -1) {
+            perror("open");
+            exit(EXIT_FAILURE);
+        }
+        write(store_fd, &resource[resource_index], 1);
+        resource_index = (resource_index + 1) % strlen(resource);
+        close(store_fd);
+
+        // 打印生产之后的仓库状态
+        store_fd = open(STORE_FILE, O_RDONLY);
+        if (store_fd == -1) {
+            perror("open");
+            exit(EXIT_FAILURE);
+        }
+        read(store_fd, buffer, BUFFER_SIZE);
+        close(store_fd);
+        printf("After production: Resources: %ld, Empty slots: %ld\n", strlen(buffer), BUFFER_SIZE - strlen(buffer));
+
+        // 释放信号量
+        if (semop(semid, &producer_end, 1) == -1) {
+            perror("semop");
+            exit(EXIT_FAILURE);
+        }
+
+        // 延时1s
+        sleep(1);
+    }
+
+    // 删除信号量
+    if (semctl(semid, 0, IPC_RMID) == -1) {
+        perror("semctl");
+        exit(EXIT_FAILURE);
+    }
+
+    return 0;
+}
+```
+
+消费者程序（consumer.c）：
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define STORE_FILE "/tmp/store"
+#define BUFFER_SIZE 100
+
+struct sembuf producer_start = {0, -1, SEM_UNDO};
+struct sembuf producer_end = {0, 1, SEM_UNDO};
+struct sembuf consumer_start = {1, -1, SEM_UNDO};
+struct sembuf consumer_end = {1, 1, SEM_UNDO};
+
+int main() {
+    int semid;
+    int store_fd;
+    char buffer[BUFFER_SIZE];
+
+    // 创建或访问信号量
+    semid = semget(IPC_PRIVATE, 2, IPC_CREAT | IPC_EXCL | 0666);
+    if (semid == -1) {
+        perror("semget");
+        exit(EXIT_FAILURE);
+    }
+
+    // 初始化信号量
+    sem
+
+列出测试数据和实验结果截图：

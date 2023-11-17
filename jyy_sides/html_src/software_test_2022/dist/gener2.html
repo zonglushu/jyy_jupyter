@@ -1,0 +1,152 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="./static/css/base.css" rel="stylesheet"/>
+<link href="./static/css/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet" type="text/css"/>
+<title> 软件组2022级考核 </title>
+<!-- browser favicon -->
+<link href="./static/img/favicon.png" rel="shortcut icon"/>
+<style>
+        .font-sans {
+            font-family: 'Lato', 'SimHei', 'STHeiti', 'SimHei', 'Serif';
+        }
+
+        .font-serif {
+            font-family: 'Source Serif Pro', 'Songti SC', 'SimSun', 'Serif', serif;
+        }
+    </style>
+<!-- <link rel="stylesheet" href="https://jyywiki.cn/static/katex/katex.min.css">
+    <script defer src="https://jyywiki.cn/static/katex/katex.min.js"></script> -->
+<link href="./static/katex/katex.min.css" rel="stylesheet"/>
+<script defer="" src="./static/katex/katex.min.js"></script>
+<!-- <script defer src="https://jyywiki.cn/static/katex/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script> -->
+<script defer="" src="./static/katex/auto-render.min.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // &#8226; auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // &#8226; rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+<link href="./static/reveal/reveal.css" rel="stylesheet"/>
+<link href="./static/reveal/theme/simple.css" id="theme" rel="stylesheet"/>
+<link href="./static/jyy/jyy.css" rel="stylesheet"/>
+</head>
+    <body class="d-flex flex-column h-100">
+        <div class="reveal">
+            <div class="slides">
+                <section><section><div class="center middle"><div style="width:100%"><div><h1 class="text-2xl mt-2 font-sans" id="_1">数据结构</h1>
+<h1 class="text-2xl mt-2 font-sans" id="data-structure">Data Structure</h1></div></div></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">树</h2>
+<p class="font-serif my-1"><strong><em>这里我们暂时不去想设计模式那样,深究数据结构相较于计算机的意义,并且这个也不是我们这次考核的重点</em></strong></p>
+<p class="font-serif my-1"><del>其实是我搞不完了,设计模式的内容还是我半夜赶的稿</del></p>
+<ol>
+<li class="ml-8">任务是要用任何一种熟悉的编程语言</li>
+<li class="ml-8">通过抽象的逻辑关系,在控制台中打印</li>
+<li class="ml-8">可以通过迭代，也可以通过递归,whatever you want </li>
+<li class="ml-8">确保即插即用?</li>
+<li class="ml-8">其实树能扯的东西特别多,用处也特别多,</li>
+<li class="ml-8">但碍于时间限制,以及这次考核的限制....</li>
+<li class="ml-8">或许下次考核的重点就是数据结构</li>
+</ol>
+<p class="font-serif my-1"><del>这样我就有时间去深入挖掘,好像是在为我的懒惰找借口</del></p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">树</h2>
+<p class="font-serif my-1"><img class="" src="./static/img/2fb749e9826d4f87b984f0d400bf32bf.jpg" style="width:800px"/> </p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">栈,队列</h2>
+<p class="font-serif my-1">先看两个小小的算法</p>
+<ol>
+<li class="ml-8">深度优先搜索</li>
+<li class="ml-8">广度优先搜索</li>
+</ol>
+<p class="font-serif my-1"><del>栈和队列与这两个算法有什么关系?</del></p>
+<p class="font-serif my-1"><del>貌似这里我如果实现一个可以在线画图的库,就可以直接画出深度优先搜索的算法,计划表上有多了一项不知道什么时候才能完成的任务</del></p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">深度优先搜索</h2>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/573bc1ba9c104574bb849663dbb21875.png" style="width:500px"/> </p>
+<ul class="list-disc font-serif">
+<li class="ml-8">
+<p class="font-serif my-1">深度优先,顾名思义先沿一条路走到黑,走完再回来走另一条路,
+ <del>如果走不完那就不回来</del></p>
+</li>
+<li class="ml-8">
+<p class="font-serif my-1">那右侧节点的顺序就可以是</p>
+<ul class="list-disc font-serif">
+<li class="ml-8">1</li>
+<li class="ml-8">2-&gt;5-&gt;9</li>
+<li class="ml-8">3-&gt;6-&gt;10,</li>
+<li class="ml-8">7,</li>
+<li class="ml-8">4-&gt;8</li>
+</ul>
+</li>
+</ul></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">深度优先搜索</h2>
+<ol>
+<li class="ml-8">那这跟队列和栈有什么关系？</li>
+<li class="ml-8">如果不用递归或者说,用迭代来模拟递归 -&gt; 2,3,4同时被挑出来,却将2的整个一支执行后才轮到3,4</li>
+<li class="ml-8">这似乎有点关系,如果将2的孩子跟3,4做比较</li>
+<li class="ml-8">3,4是先被选,2的孩子是后选,先选后执行,后选先执行......</li>
+</ol>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/50d14256d1b040209729a01e93afc000.png" style="width:500px"/> </p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">广度优先搜索</h2>
+<ol>
+<li class="ml-8">与其是一个顺序关系,不如说是一个制约关系,后面的子孩子执行完才能执行前面的兄弟节点</li>
+<li class="ml-8">好像需要设置一个能实现先来后处理,后来先处理的容器.....</li>
+<li class="ml-8">有了深度的例子,广度似乎好像也是这样</li>
+<li class="ml-8">1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;7-&gt;8-&gt;9-&gt;10</li>
+<li class="ml-8">有点像层次遍历?</li>
+<li class="ml-8">对比于深度,似乎是按层级顺序或者是先后顺序?先选的先执行</li>
+</ol>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/6e9c7df012f44393bbdf8b635f3d1b47.png" style="width:500px"/> </p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">优先搜索</h2>
+<ol>
+<li class="ml-8">我们好像什么也没说,但是什么都说了</li>
+<li class="ml-8">我们是似乎可以用一个无环状态图来表示执行顺序</li>
+<li class="ml-8">偶然间发现其实这些数据结构做的好像就是一件事 --&gt; 描述任务的执行顺序</li>
+<li class="ml-8">可能任务有点具体了，如果我们将这些执行顺序写成一个三元组,四元组</li>
+<li class="ml-8">(10,A,G)-&gt;(9,B,E),并且我们给其用一个更加逻辑化的词语---状态</li>
+<li class="ml-8">状态的改变,状态的转移,状态的传播,状态的依赖</li>
+<li class="ml-8">程序是一个状态机......</li>
+<li class="ml-8">好像发现了什么不得了的东西</li>
+</ol></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">图</h2>
+<p class="font-serif my-1">刚才,似乎有一个程序是状态机的一个概念,</p>
+<p class="font-serif my-1">那这跟图又有什么关系?</p>
+<p class="font-serif my-1">如果我们将图的概念简化一点,将图认为是有一个个点节点和边连接的一个结构</p>
+<p class="font-serif my-1">好像我们前面树的图也是这么画的,好像链表也可以这么画,似乎队列和栈也可以</p>
+<p class="font-serif my-1">似乎这些数据结构都在处理一件事情,程序是一个状态机?</p>
+<p class="font-serif my-1">如果我们将节点当作是一个状态,一条边当作是一个能引起状态变化的操作</p>
+<p class="font-serif my-1">嗯?  好像又想起了一句话:程序 = 数据结构 + 算法</p>
+<p class="font-serif my-1">如果将数据结构描述为状态的集合,算法当作边的处理,似乎这两句话是一个意思!!!</p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">图</h2>
+<p class="font-serif my-1">意识到上面一点后,图这里能说的好像更多了,但这次图这里我们就先到这里</p>
+<p class="font-serif my-1">这次考核主要的目的还是理解 "数据结构"</p>
+<p class="font-serif my-1"><del>其实就是我没时间了,现在都已经是半夜了,挖的坑太多.....</del></p>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/64fb9206ca354013b8055ebb8f8de676.webp" style="width:500px"/></p></div></section></section>
+            </div>
+        </div>
+        <script src="./static/reveal/reveal.js"></script><script>
+        Reveal.initialize({
+
+            width: 1024, height: 768,
+
+            slideNumber: 'c/t',
+            controlsTutorial: false,
+            progress: false,
+            hash: true,
+            center: false,
+            autoAnimateUnmatched: true,
+            autoAnimateEasing: 'ease-out',
+            autoAnimateDuration: 0.3,
+            transitionSpeed: 'fast'
+        });
+    </script>
+    </body>
+    </html>
+    

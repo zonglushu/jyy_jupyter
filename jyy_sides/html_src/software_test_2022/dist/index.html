@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./static/css/base.css" rel="stylesheet">
+    <link href="./static/css/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet"
+        type="text/css">
+    <title> 软件组2022级考核 </title>
+    <!-- browser favicon -->
+    <link rel="shortcut icon" href="./static/img/favicon.png">
+    <style>
+        .font-sans {
+            font-family: 'Lato', 'SimHei', 'STHeiti', 'SimHei', 'Serif';
+        }
+
+        .font-serif {
+            font-family: 'Source Serif Pro', 'Songti SC', 'SimSun', 'Serif', serif;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://jyywiki.cn/static/katex/katex.min.css">
+    <script defer src="https://jyywiki.cn/static/katex/katex.min.js"></script> -->
+    <link rel="stylesheet" href="./static/katex/katex.min.css">
+    <script defer src="./static/katex/katex.min.js"></script>
+    <!-- <script defer src="https://jyywiki.cn/static/katex/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script> -->
+    <script defer src="./static/katex/auto-render.min.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // &#8226; auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // &#8226; rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="./static/reveal/reveal.css">
+    <link rel="stylesheet" href="./static/reveal/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="./static/jyy/jyy.css">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <div class="reveal">
+        <div class="slides">
+            <section><section><div class="center middle"><div style="width:100%"><div><h1 id="2022" class="text-2xl mt-2 font-sans">软件组2022级考核</h1><p class="font-serif my-1">
+    <include src="Slides_Author">
+        <div class="py-16">
+            <p class="font-serif my-1">
+                <a href="https://ics.nju.edu.cn/~jyy/" class=" text-amber-900">
+                    王进康
+                </a>
+            </p>
+        </div>
+        <div class="row">
+            <p class="font-serif my-1"/>
+            
+            <div class="author-affiliation">
+                <a href="https://www.nju.edu.cn/main.htm" class=" text-amber-900">
+                    <p class="font-serif my-1">
+                        　河南大学　
+                    </p>
+                    <img class="inline-img h-24" src="./static/img/ea685f5d51964eeb895c5b0de8df889e.jpeg" style="display: inline-block;"/>
+                </a>
+            </div>
+            
+            <div class="author-affiliation">
+                <a href="https://cs.nju.edu.cn/main.htm" class=" text-amber-900">
+                    <p class="font-serif my-1">
+                        　淳阳项目组　
+                    </p>
+                    <img class="inline-img h-24" src="./static/img/b59b3bec87704761bf4ad2a66b0935b5.png" style="display: inline-block;"/>
+                </a>
+            </div>
+            
+            <div class="author-affiliation">
+                <a href="https://www.nju.edu.cn/main.htm" class=" text-amber-900">
+                    <p class="font-serif my-1">
+                        　软件组　
+                    </p>
+                    <img class="inline-img h-24" src="./static/img/bdf067ea0b84415cb20a60efff380ad8.jpeg" style="display: inline-block;"/>
+                </a>
+            </div>
+            
+        </div>
+    </include>
+</p></div></div></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">考核内容</h2>
+<p class="font-serif my-1"><strong><em>设计模式</em></strong></p>
+<ul class="list-disc font-serif">
+<li class="ml-8">双十一（easy） </li>
+<li class="ml-8">股票（<em>hard</em>）</li>
+<li class="ml-8">实际开发中真实的设计模式的应用</li>
+<li class="ml-8">"忘掉"设计模式
+<br/>
+<br/></li>
+</ul>
+<p class="font-serif my-1"><strong><em>数据结构</em></strong></p>
+<ul class="list-disc font-serif">
+<li class="ml-8">树          the logical structure of sensor</li>
+<li class="ml-8">栈,队列  describe the logical structure of the data ?</li>
+<li class="ml-8">图          Topology of data</li>
+<li class="ml-8">程序 = 数据结构 + 算法 ?</li>
+</ul></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">考核内容</h2>
+<p class="font-serif my-1"><strong><em>并发导论</em></strong> </p>
+<ul class="list-disc font-serif">
+<li class="ml-8">左括号,右括号(消费者-生产者) </li>
+<li class="ml-8">嵌套的左括号,右括号 </li>
+<li class="ml-8">打印鱼？(好玩的东西) </li>
+<li class="ml-8">(why)为什么要并发 </li>
+<li class="ml-8">(how)如何划分并发任务
+<br/>
+<br/></li>
+</ul>
+<p class="font-serif my-1"><strong><em>底层原理</em></strong></p>
+<ul class="list-disc font-serif">
+<li class="ml-8">世界线收束</li>
+</ul></div></section></section><section><section><div class="center middle"><div style="width:100%"><div><h1 id="_1" class="text-2xl mt-2 font-sans">设计模式</h1>
+<h1 id="design-patterns" class="text-2xl mt-2 font-sans">Design Patterns</h1></div></div></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">双十一</h2>
+<p class="font-serif my-1"><strong><em>题目描述</em></strong>
+<br/></p>
+<p class="font-serif my-1">         马上双十一，需要给多个顾客发电子邮件，电子邮件的信息的内容跟平常不同，是跟双十一有关的内容，但是后面还有其他的购物节，到那时候电子邮件的信息又不一样，而且要求到平常的时候，电子邮件的信息又要回到原来平常的信息.</p>
+<p class="font-serif my-1"><br/>
+<br/></p>
+<p class="font-serif my-1"><strong><em>思考</em></strong></p>
+<ol>
+<li class="ml-8">How to abstract into a logical structure?</li>
+<li class="ml-8">How to use design pattern? one,two,three.....</li>
+<li class="ml-8">How to deal with it without the design pattern?</li>
+</ol></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">一个可能的设计</h2>
+<ol>
+<li class="ml-8">每个不同的节日都有对应的内容,将不同的内容抽出来</li>
+<li class="ml-8">每个节日都需要将对应的内容装配到邮件中</li>
+<li class="ml-8">最后新增节日时，只需要新增节日对应的内容</li>
+<li class="ml-8">不想重写发送邮件的接口</li>
+<li class="ml-8">好像可以让一个类代理？
+<img class="float-right" src="./static/img/303075879a5b4a67a6a5cf8989f84da4.png" style="width:700px"/> </li>
+</ol></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">股票</h2>
+<p class="font-serif my-1"><del>好像没有题目描述,只有图示,貌似是我的锅</del></p>
+<p class="font-serif my-1"><br/>
+<br/></p>
+<p class="font-serif my-1"><img class="" src="./static/img/299b0efd12934637af6965e8053f4c9b.png" style="width:1000px"/> </p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">实际开发中真实的设计模式的应用</h2>
+<p class="font-serif my-1"><del>其实,你们已经见到过了</del></p>
+<ol>
+<li class="ml-8">SpringBoot的源码<ul class="list-disc font-serif">
+<li class="ml-8">各种特性几乎是各种设计模式的叠加</li>
+</ul>
+</li>
+<li class="ml-8">Mybatis or Mybatis-plus的源码</li>
+<li class="ml-8">Hutool包</li>
+<li class="ml-8">几乎你们在Java开发中常用的包中多多少少都有设计模式的影子</li>
+</ol>
+<p class="font-serif my-1"><br/>
+<br/></p>
+<p class="font-serif my-1"><strong><em>这么说多多少少还是有点抽象,以实际 IoT 开发的一个小场景为例</em></strong></p>
+<p class="font-serif my-1"><br/></p>
+<p class="font-serif my-1"><del>其实只是我被重构多次折磨后不得不做罢了</del></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">实际案例</h2>
+<ol>
+<li class="ml-8">想象一下我们生产的传感器在全国畅销如潮,近如郑州,远至上海.</li>
+<li class="ml-8">但是硬件现在需要升级功能,如果在设计时,只考虑垂直设计,一层一层地叠,</li>
+<li class="ml-8">最后升级的话,甚至还需要将硬件回收,再集中升级?</li>
+<li class="ml-8">显然,这不是一个好主意,我们似乎自然而然地想到了解决对象——抽象</li>
+<li class="ml-8">如果我们在设计硬件的时候,考虑到将来功能必然要升级,我们似乎可以将硬件所执行的逻辑抽象</li>
+<li class="ml-8">比如 match-action——当match匹配到某一个值,执行相应的action。</li>
+<li class="ml-8">如果我们还能有一个软件系统能动态更新这个 match-action表,似乎硬件可以自动更新,或者换个词(自学习?自适应?)</li>
+<li class="ml-8">好像是可行的,尝试画个图玩玩</li>
+</ol></div></section><section><div class="center middle"><div style="width:100%"><div><h1 id="_1" class="text-2xl mt-2 font-sans">"忘掉"设计模式</h1></div></div></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">"忘掉"设计模式</h2>
+<p class="font-serif my-1"><em>学设计模式有一段时间,似乎有种学了但没咋学的感觉</em> -- <del>我*，如学</del></p>
+<p class="font-serif my-1"><del>这是个挺尴尬的事情,好像仅仅只是将设计模式当作一门课水过去,看那些源码还是困难,或者当数量如SpringBoot源码动则十几个更甚如设计模式套设计模式,还是无法理解</del></p>
+<p class="font-serif my-1">我们写程序,总是说要有个场景,有个场景,其实回顾一下,似乎可以总结为,将物理世界的问题投影到数字世界中
+咦,我们试着从这个角度回顾一下,似乎真的是这样</p>
+<ol>
+<li class="ml-8">将问题抽象为对象,</li>
+<li class="ml-8">从物理问题中抽象出简单的逻辑关系</li>
+<li class="ml-8">最后将逻辑关系映射到对象上</li>
+<li class="ml-8">之后模拟这个物理问题的好像只是这个逻辑关系</li>
+<li class="ml-8">即使之后要修改,似乎只是增添了几个对象,逻辑关系似乎还没变?</li>
+<li class="ml-8">似乎对于设计模式知道了什么......</li>
+</ol>
+<p class="font-serif my-1"><strong><em>似乎好像这个观念对于计算机体系来说都可以这样认为,下面的设计模式好像就可以这么用</em></strong></p></div></section></section><section><section><div class="center middle"><div style="width:100%"><div><h1 id="_1" class="text-2xl mt-2 font-sans">数据结构</h1>
+<h1 id="data-structure" class="text-2xl mt-2 font-sans">Data Structure</h1></div></div></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">树</h2>
+<p class="font-serif my-1"><strong><em>这里我们暂时不去想设计模式那样,深究数据结构相较于计算机的意义,并且这个也不是我们这次考核的重点</em></strong></p>
+<p class="font-serif my-1"><del>其实是我搞不完了,设计模式的内容还是我半夜赶的稿</del></p>
+<ol>
+<li class="ml-8">任务是要用任何一种熟悉的编程语言</li>
+<li class="ml-8">通过抽象的逻辑关系,在控制台中打印</li>
+<li class="ml-8">可以通过迭代，也可以通过递归,whatever you want </li>
+<li class="ml-8">确保即插即用?</li>
+<li class="ml-8">其实树能扯的东西特别多,用处也特别多,</li>
+<li class="ml-8">但碍于时间限制,以及这次考核的限制....</li>
+<li class="ml-8">或许下次考核的重点就是数据结构</li>
+</ol>
+<p class="font-serif my-1"><del>这样我就有时间去深入挖掘,好像是在为我的懒惰找借口</del></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">树</h2>
+<p class="font-serif my-1"><img class="" src="./static/img/2fb749e9826d4f87b984f0d400bf32bf.jpg" style="width:800px"/> </p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">栈,队列</h2>
+<p class="font-serif my-1">先看两个小小的算法</p>
+<ol>
+<li class="ml-8">深度优先搜索</li>
+<li class="ml-8">广度优先搜索</li>
+</ol>
+<p class="font-serif my-1"><del>栈和队列与这两个算法有什么关系?</del></p>
+<p class="font-serif my-1"><del>貌似这里我如果实现一个可以在线画图的库,就可以直接画出深度优先搜索的算法,计划表上有多了一项不知道什么时候才能完成的任务</del></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">深度优先搜索</h2>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/573bc1ba9c104574bb849663dbb21875.png" style="width:500px"/> </p>
+<ul class="list-disc font-serif">
+<li class="ml-8">
+<p class="font-serif my-1">深度优先,顾名思义先沿一条路走到黑,走完再回来走另一条路,
+ <del>如果走不完那就不回来</del></p>
+</li>
+<li class="ml-8">
+<p class="font-serif my-1">那右侧节点的顺序就可以是</p>
+<ul class="list-disc font-serif">
+<li class="ml-8">1</li>
+<li class="ml-8">2-&gt;5-&gt;9</li>
+<li class="ml-8">3-&gt;6-&gt;10,</li>
+<li class="ml-8">7,</li>
+<li class="ml-8">4-&gt;8</li>
+</ul>
+</li>
+</ul></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">深度优先搜索</h2>
+<ol>
+<li class="ml-8">那这跟队列和栈有什么关系？</li>
+<li class="ml-8">如果不用递归或者说,用迭代来模拟递归 -&gt; 2,3,4同时被挑出来,却将2的整个一支执行后才轮到3,4</li>
+<li class="ml-8">这似乎有点关系,如果将2的孩子跟3,4做比较</li>
+<li class="ml-8">3,4是先被选,2的孩子是后选,先选后执行,后选先执行......</li>
+</ol>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/50d14256d1b040209729a01e93afc000.png" style="width:500px"/> </p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">广度优先搜索</h2>
+<ol>
+<li class="ml-8">与其是一个顺序关系,不如说是一个制约关系,后面的子孩子执行完才能执行前面的兄弟节点</li>
+<li class="ml-8">好像需要设置一个能实现先来后处理,后来先处理的容器.....</li>
+<li class="ml-8">有了深度的例子,广度似乎好像也是这样</li>
+<li class="ml-8">1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;7-&gt;8-&gt;9-&gt;10</li>
+<li class="ml-8">有点像层次遍历?</li>
+<li class="ml-8">对比于深度,似乎是按层级顺序或者是先后顺序?先选的先执行</li>
+</ol>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/6e9c7df012f44393bbdf8b635f3d1b47.png" style="width:500px"/> </p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">优先搜索</h2>
+<ol>
+<li class="ml-8">我们好像什么也没说,但是什么都说了</li>
+<li class="ml-8">我们是似乎可以用一个无环状态图来表示执行顺序</li>
+<li class="ml-8">偶然间发现其实这些数据结构做的好像就是一件事 --&gt; 描述任务的执行顺序</li>
+<li class="ml-8">可能任务有点具体了，如果我们将这些执行顺序写成一个三元组,四元组</li>
+<li class="ml-8">(10,A,G)-&gt;(9,B,E),并且我们给其用一个更加逻辑化的词语---状态</li>
+<li class="ml-8">状态的改变,状态的转移,状态的传播,状态的依赖</li>
+<li class="ml-8">程序是一个状态机......</li>
+<li class="ml-8">好像发现了什么不得了的东西</li>
+</ol></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">图</h2>
+<p class="font-serif my-1">刚才,似乎有一个程序是状态机的一个概念,</p>
+<p class="font-serif my-1">那这跟图又有什么关系?</p>
+<p class="font-serif my-1">如果我们将图的概念简化一点,将图认为是有一个个点节点和边连接的一个结构</p>
+<p class="font-serif my-1">好像我们前面树的图也是这么画的,好像链表也可以这么画,似乎队列和栈也可以</p>
+<p class="font-serif my-1">似乎这些数据结构都在处理一件事情,程序是一个状态机?</p>
+<p class="font-serif my-1">如果我们将节点当作是一个状态,一条边当作是一个能引起状态变化的操作</p>
+<p class="font-serif my-1">嗯?  好像又想起了一句话:程序 = 数据结构 + 算法</p>
+<p class="font-serif my-1">如果将数据结构描述为状态的集合,算法当作边的处理,似乎这两句话是一个意思!!!</p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">图</h2>
+<p class="font-serif my-1">意识到上面一点后,图这里能说的好像更多了,但这次图这里我们就先到这里</p>
+<p class="font-serif my-1">这次考核主要的目的还是理解 "数据结构"</p>
+<p class="font-serif my-1"><del>其实就是我没时间了,现在都已经是半夜了,挖的坑太多.....</del></p>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/64fb9206ca354013b8055ebb8f8de676.webp" style="width:500px"/></p></div></section></section><section><section><div class="center middle"><div style="width:100%"><div><h1 id="_1" class="text-2xl mt-2 font-sans">并发导论</h1></div></div></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">左括号,右括号</h2>
+<ul class="list-disc font-serif">
+<li class="ml-8">在数据结构那里，我们得到了一个结论---程序就是一个状态机</li>
+<li class="ml-8">同时,我们也又似乎知道数据结构是用来描述状态或者是状态转移的</li>
+<li class="ml-8">这跟并发又有什么关系?</li>
+<li class="ml-8">我们不妨先将打印左括号和右括号这个程序用图的方式表示</li>
+</ul>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/b809b790e78a4a0f917a08301243e748.png" style="width:300px"/></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">左括号,右括号</h2>
+<ul class="list-disc font-serif">
+<li class="ml-8">我们是要先打左括号,再打右括号,打完一个右括号,就又能打一个左括号......</li>
+<li class="ml-8">好像是打印一个左括号就能打印一个右括号,打印一个右括号就能打印一个左括号</li>
+<li class="ml-8">这好像也是一种顺序,我们似乎可以将这种顺序抽象成先进先出或者先进后出?</li>
+<li class="ml-8">似乎是可以用栈和队列实现?</li>
+<li class="ml-8">但我们又想如果我的电脑能同时处理打印左括号,打印右括号两个任务,似乎没啥用</li>
+<li class="ml-8">还是要遵守顺序,不遵守顺序可能会打印错误的形状</li>
+</ul></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">左括号,右括号</h2>
+<ul class="list-disc font-serif">
+<li class="ml-8">那还要并发干什么?</li>
+<li class="ml-8">如果我们将打印左括号这个任务换成处理一个一百万乘一百万的矩阵</li>
+<li class="ml-8">我们经过计算,发现矩阵中某些数据之间没有状态转换</li>
+<li class="ml-8">换言之,那些数据不受其他数据的制约，也就是说当一个cpu处理其他数据,这些数据也能被处理</li>
+<li class="ml-8">似乎并发有了一些意义</li>
+</ul></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">左括号,右括号</h2>
+<ul class="list-disc font-serif">
+<li class="ml-8">我们还可以更近一步,将并发描述成</li>
+<li class="ml-8">在原来的状态转移中,找出在某个时刻不受其他状态影响的状态,同时处理这些状态转移</li>
+</ul>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/bd5f95af42454ea6b8d453f6813c394b.png" style="width:300px"/></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">嵌套的左括号,右括号</h2>
+<p class="font-serif my-1"><del>待填</del></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">打印鱼</h2>
+<p class="font-serif my-1"><del>待填</del></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">为什么要并发</h2>
+<p class="font-serif my-1"><del>待填</del></p></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">如何划分并发任务</h2>
+<p class="font-serif my-1"><del>待填</del></p></div></section></section><section><section><div class="center middle"><div style="width:100%"><div><h1 id="_1" class="text-2xl mt-2 font-sans">底层原理</h1></div></div></div></section><section><div><h2 id="_1" class="text-xl mt-2 pb-2 font-sans">世界线收束</h2>
+<p class="font-serif my-1"><del>待填</del></p></div></section></section>
+        </div>
+    </div>
+
+    <script src="./static/reveal/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+
+            width: 1024, height: 768,
+
+            slideNumber: 'c/t',
+            controlsTutorial: false,
+            progress: false,
+            hash: true,
+            center: false,
+            autoAnimateUnmatched: true,
+            autoAnimateEasing: 'ease-out',
+            autoAnimateDuration: 0.3,
+            transitionSpeed: 'fast'
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="./static/css/base.css" rel="stylesheet"/>
+<link href="./static/css/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet" type="text/css"/>
+<title> 软件组2022级考核 </title>
+<!-- browser favicon -->
+<link href="./static/img/favicon.png" rel="shortcut icon"/>
+<style>
+        .font-sans {
+            font-family: 'Lato', 'SimHei', 'STHeiti', 'SimHei', 'Serif';
+        }
+
+        .font-serif {
+            font-family: 'Source Serif Pro', 'Songti SC', 'SimSun', 'Serif', serif;
+        }
+    </style>
+<!-- <link rel="stylesheet" href="https://jyywiki.cn/static/katex/katex.min.css">
+    <script defer src="https://jyywiki.cn/static/katex/katex.min.js"></script> -->
+<link href="./static/katex/katex.min.css" rel="stylesheet"/>
+<script defer="" src="./static/katex/katex.min.js"></script>
+<!-- <script defer src="https://jyywiki.cn/static/katex/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script> -->
+<script defer="" src="./static/katex/auto-render.min.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // &#8226; auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // &#8226; rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+<link href="./static/reveal/reveal.css" rel="stylesheet"/>
+<link href="./static/reveal/theme/simple.css" id="theme" rel="stylesheet"/>
+<link href="./static/jyy/jyy.css" rel="stylesheet"/>
+</head>
+    <body class="d-flex flex-column h-100">
+        <div class="reveal">
+            <div class="slides">
+                <section><section><div class="center middle"><div style="width:100%"><div><h1 class="text-2xl mt-2 font-sans" id="_1">设计模式</h1>
+<h1 class="text-2xl mt-2 font-sans" id="design-patterns">Design Patterns</h1></div></div></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">双十一</h2>
+<p class="font-serif my-1"><strong><em>题目描述</em></strong>
+<br/></p>
+<p class="font-serif my-1">         马上双十一，需要给多个顾客发电子邮件，电子邮件的信息的内容跟平常不同，是跟双十一有关的内容，但是后面还有其他的购物节，到那时候电子邮件的信息又不一样，而且要求到平常的时候，电子邮件的信息又要回到原来平常的信息.</p>
+<p class="font-serif my-1"><br/>
+<br/></p>
+<p class="font-serif my-1"><strong><em>思考</em></strong></p>
+<ol>
+<li class="ml-8">How to abstract into a logical structure?</li>
+<li class="ml-8">How to use design pattern? one,two,three.....</li>
+<li class="ml-8">How to deal with it without the design pattern?</li>
+</ol></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">一个可能的设计</h2>
+<ol>
+<li class="ml-8">每个不同的节日都有对应的内容,将不同的内容抽出来</li>
+<li class="ml-8">每个节日都需要将对应的内容装配到邮件中</li>
+<li class="ml-8">最后新增节日时，只需要新增节日对应的内容</li>
+<li class="ml-8">不想重写发送邮件的接口</li>
+<li class="ml-8">好像可以让一个类代理？
+<img class="float-right" src="./static/img/303075879a5b4a67a6a5cf8989f84da4.png" style="width:700px"/> </li>
+</ol></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">股票</h2>
+<p class="font-serif my-1"><del>好像没有题目描述,只有图示,貌似是我的锅</del></p>
+<p class="font-serif my-1"><br/>
+<br/></p>
+<p class="font-serif my-1"><img class="" src="./static/img/299b0efd12934637af6965e8053f4c9b.png" style="width:1000px"/> </p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">实际开发中真实的设计模式的应用</h2>
+<p class="font-serif my-1"><del>其实,你们已经见到过了</del></p>
+<ol>
+<li class="ml-8">SpringBoot的源码<ul class="list-disc font-serif">
+<li class="ml-8">各种特性几乎是各种设计模式的叠加</li>
+</ul>
+</li>
+<li class="ml-8">Mybatis or Mybatis-plus的源码</li>
+<li class="ml-8">Hutool包</li>
+<li class="ml-8">几乎你们在Java开发中常用的包中多多少少都有设计模式的影子</li>
+</ol>
+<p class="font-serif my-1"><br/>
+<br/></p>
+<p class="font-serif my-1"><strong><em>这么说多多少少还是有点抽象,以实际 IoT 开发的一个小场景为例</em></strong></p>
+<p class="font-serif my-1"><br/></p>
+<p class="font-serif my-1"><del>其实只是我被重构多次折磨后不得不做罢了</del></p></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">实际案例</h2>
+<ol>
+<li class="ml-8">想象一下我们生产的传感器在全国畅销如潮,近如郑州,远至上海.</li>
+<li class="ml-8">但是硬件现在需要升级功能,如果在设计时,只考虑垂直设计,一层一层地叠,</li>
+<li class="ml-8">最后升级的话,甚至还需要将硬件回收,再集中升级?</li>
+<li class="ml-8">显然,这不是一个好主意,我们似乎自然而然地想到了解决对象——抽象</li>
+<li class="ml-8">如果我们在设计硬件的时候,考虑到将来功能必然要升级,我们似乎可以将硬件所执行的逻辑抽象</li>
+<li class="ml-8">比如 match-action——当match匹配到某一个值,执行相应的action。</li>
+<li class="ml-8">如果我们还能有一个软件系统能动态更新这个 match-action表,似乎硬件可以自动更新,或者换个词(自学习?自适应?)</li>
+<li class="ml-8">好像是可行的,尝试画个图玩玩</li>
+</ol></div></section><section><div class="center middle"><div style="width:100%"><div><h1 class="text-2xl mt-2 font-sans" id="_1">"忘掉"设计模式</h1></div></div></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">"忘掉"设计模式</h2>
+<p class="font-serif my-1"><em>学设计模式有一段时间,似乎有种学了但没咋学的感觉</em> -- <del>我*，如学</del></p>
+<p class="font-serif my-1"><del>这是个挺尴尬的事情,好像仅仅只是将设计模式当作一门课水过去,看那些源码还是困难,或者当数量如SpringBoot源码动则十几个更甚如设计模式套设计模式,还是无法理解</del></p>
+<p class="font-serif my-1">我们写程序,总是说要有个场景,有个场景,其实回顾一下,似乎可以总结为,将物理世界的问题投影到数字世界中
+咦,我们试着从这个角度回顾一下,似乎真的是这样</p>
+<ol>
+<li class="ml-8">将问题抽象为对象,</li>
+<li class="ml-8">从物理问题中抽象出简单的逻辑关系</li>
+<li class="ml-8">最后将逻辑关系映射到对象上</li>
+<li class="ml-8">之后模拟这个物理问题的好像只是这个逻辑关系</li>
+<li class="ml-8">即使之后要修改,似乎只是增添了几个对象,逻辑关系似乎还没变?</li>
+<li class="ml-8">似乎对于设计模式知道了什么......</li>
+</ol>
+<p class="font-serif my-1"><strong><em>似乎好像这个观念对于计算机体系来说都可以这样认为,下面的设计模式好像就可以这么用</em></strong></p></div></section></section>
+            </div>
+        </div>
+        <script src="./static/reveal/reveal.js"></script><script>
+        Reveal.initialize({
+
+            width: 1024, height: 768,
+
+            slideNumber: 'c/t',
+            controlsTutorial: false,
+            progress: false,
+            hash: true,
+            center: false,
+            autoAnimateUnmatched: true,
+            autoAnimateEasing: 'ease-out',
+            autoAnimateDuration: 0.3,
+            transitionSpeed: 'fast'
+        });
+    </script>
+    </body>
+    </html>
+    

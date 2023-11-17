@@ -1,0 +1,100 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<link href="../html_src/ruankao/dist/static/css/base.css" rel="stylesheet"/>
+<link href="../html_src/ruankao/dist/static/css/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet" type="text/css"/>
+<title> 软件设计师知识点 </title>
+<!-- browser favicon -->
+<link href="../html_src/ruankao/dist/static/img/favicon.png" rel="shortcut icon"/>
+<style>
+        .font-sans {
+            font-family: 'Lato', 'SimHei', 'STHeiti', 'SimHei', 'Serif';
+        }
+
+        .font-serif {
+            font-family: 'Source Serif Pro', 'Songti SC', 'SimSun', 'Serif', serif;
+        }
+    </style>
+<!-- <link rel="stylesheet" href="https://jyywiki.cn/static/katex/katex.min.css">
+    <script defer src="https://jyywiki.cn/static/katex/katex.min.js"></script> -->
+<link href="../html_src/ruankao/dist/static/katex/katex.min.css" rel="stylesheet"/>
+<script defer="" src="../html_src/ruankao/dist/static/katex/katex.min.js"></script>
+<!-- <script defer src="https://jyywiki.cn/static/katex/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script> -->
+<script defer="" src="../html_src/ruankao/dist/static/katex/auto-render.min.js"></script>
+<script src="../html_src/ruankao/dist/plugin/markdown/markdown.js"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // &#8226; auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // &#8226; rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+<link href="../html_src/ruankao/dist/static/reveal/reveal.css" rel="stylesheet"/>
+<link href="../html_src/ruankao/dist/static/reveal/theme/simple.css" id="theme" rel="stylesheet"/>
+<link href="../html_src/ruankao/dist/static/jyy/jyy.css" rel="stylesheet"/>
+</head>
+    <body class="d-flex flex-column h-100">
+        <div class="reveal">
+            <div class="slides">
+                <section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">操作系统</h2>
+<ol>
+<li class="ml-8">进程资源图</li>
+<li class="ml-8">PV操作信号量</li>
+<li class="ml-8">页表的计算</li>
+</ol></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">进程资源图</h2>
+<ol>
+<li class="ml-8"><em>P：进程,R：一类资源,R中的圆圈数：该类资源有几个</em></li>
+<li class="ml-8"><em>读图时，先看资源分配R→P，再看资源申请P→R</em></li>
+<li class="ml-8"><em>如果所有节点都是阻塞的——此进程资源图不可以化简，是死锁的</em></li>
+<li class="ml-8"><em>如果有节点不是阻塞的——</em><ul class="list-disc font-serif">
+<li class="ml-8">将非阻塞节点周围的箭头删去，只保留阻塞节点的箭头</li>
+<li class="ml-8">此时，观察现在得到的图中，原来的阻塞节点是否阻塞？</li>
+<li class="ml-8">如果在新图中，它是非阻塞的，则原图是可以化简的，非死锁的</li>
+</ul>
+</li>
+<li class="ml-8"><em>同时有多个进程申请同一资源,但是只是提出了申请,并不意味着资源申请已被响应</em></li>
+<li class="ml-8"><em>注意区分死锁和阻塞</em></li>
+</ol></div></section><section><div><h2 class="text-xl mt-2 pb-2 font-sans" id="_1">进程资源图的化简</h2>
+<ol>
+<li class="ml-8"><em>化简是动态的,从未阻塞的进程出发并且化简的时候就默认这个未阻塞的进程已经执行完了</em><ul class="list-disc font-serif">
+<li class="ml-8"><em>就要释放分配给他的资源和他使用的资源,然后资源数就会变化,然后再重新分配就好</em></li>
+</ul>
+</li>
+</ol></div></section></section>
+            </div>
+        </div>
+        <script src="../html_src/ruankao/dist/static/reveal/reveal.js"></script><script>
+        Reveal.initialize({
+
+            width: 1024, height: 768,
+
+            slideNumber: 'c/t',
+            controlsTutorial: false,
+            progress: false,
+            hash: true,
+            center: false,
+            autoAnimateUnmatched: true,
+            autoAnimateEasing: 'ease-out',
+            autoAnimateDuration: 0.3,
+            transitionSpeed: 'fast'
+        });
+    </script>
+    </body>
+    </html>
+    
