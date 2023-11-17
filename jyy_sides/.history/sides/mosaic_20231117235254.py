@@ -14,13 +14,14 @@ from ipywidgets.embed import embed_minimal_html, dependency_state
 def sideshow(page_name,section_index):
     # 根据 `page_number` 选择要嵌入的 HTML 文件
     # 源幻灯片html的地址
-    sides_file_path=f"./html_src/{page_name}/dist/index.html"
+    
+    sides_file_path=f"../html_src/{page_name}/dist/index.html"
     # 在Jupyter中展示的幻灯片的模版
-    show_sides_path=f"./html_src/10.html"
+    show_sides_path=f"../html_src/10.html"
     # 最后生成幻灯片的某个片段的路径
-    gener_file_path=f"./html_src/{page_name}/dist/gener{section_index}.html"
+    gener_file_path=f"../html_src/{page_name}/dist/gener{section_index}.html"
     # 最后在Jupyter中展示的幻灯片代码的地址
-    frame_side_path=f"./html_src/{page_name}/dist/frame_side{section_index}.html"
+    frame_side_path=f"../html_src/{page_name}/dist/frame_side{section_index}.html"
     
     if(os.path.exists(frame_side_path)):
         return HTML(frame_side_path)

@@ -14,6 +14,7 @@ from ipywidgets.embed import embed_minimal_html, dependency_state
 def sideshow(page_name,section_index):
     # 根据 `page_number` 选择要嵌入的 HTML 文件
     # 源幻灯片html的地址
+    "./html_src/10.html"
     sides_file_path=f"./html_src/{page_name}/dist/index.html"
     # 在Jupyter中展示的幻灯片的模版
     show_sides_path=f"./html_src/10.html"

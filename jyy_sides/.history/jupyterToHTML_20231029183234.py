@@ -21,7 +21,7 @@ notebook_file = args.notebook
 # 获取原文件的文件夹路径
 original_directory = os.path.dirname(notebook_file)
 # 定义导出的 HTML 文件名
-html_file = os.path.join(original_directory, 'index.html')
+html_file = os.path.join(original_directory, 'output.html')
 
 # 导出 Jupyter Notebook 为 HTML
 def export_to_html():
